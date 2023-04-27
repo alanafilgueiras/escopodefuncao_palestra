@@ -1,0 +1,40 @@
+import {
+  CodeSurfer,
+  CodeSurferColumns,
+  Step,
+} from "code-surfer";
+import { github, vsDark } from "@code-surfer/themes";
+
+export const theme = vsDark;
+
+O que é?
+# Escopo de Função 👋
+---
+# Variável
+---
+Qual o conceito de variável?
+### Na programação, uma variável é um objeto capaz de reter e representar um valor ou expressão.
+---
+### Como declarar uma variável?
+#### Existem 3 tipos de declaração de variável em JavaScript
+---
+#### É dizer em qual local do código a variável vai ser definida.
+---
+### Existem as variáveis globais e locais
+### Variável GLOBAL: É definida quando declaramos uma variável fora de qualquer função.
+---
+<CodeSurfer>
+
+ ```js 
+ let peso = 70
+ let altura = 1.75
+
+function calculaIMC(altura,peso) {
+  
+  return(peso/(altura * altura)).toFixed(2);
+  const imc = calculaIMC(altura,peso);    
+}
+  
+  console.log(`Seu imc é igual a ${imc}`);
+```
+</CodeSurfer>
