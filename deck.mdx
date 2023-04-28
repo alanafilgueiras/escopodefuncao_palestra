@@ -15,24 +15,78 @@ O que é?
 Qual o conceito de variável?
 ### Na programação, uma variável é um objeto capaz de reter e representar um valor ou expressão.
 ---
-## Como declarar uma variável?
----
+## Para declarar uma variável
 ## Precisamos saber que:
-### - A linguagem do JavaScript é case sensitive
 ---
-Maiúscula e minúscula faz diferença
+### - A linguagem do JavaScript é case sensitive
+### Maiúscula e minúscula faz diferença
+---
 ## A != a 
 ---
-### Existem 3 tipos de declaração de variável em JavaScript
+### - Existem 3 tipos de declaração de variável em JavaScript
 - var 
 - let 
 - const
 ---
-# Qual é a diferença?
+### - Existem as variáveis globais e locais
 ---
-#### É dizer em qual local do código a variável vai ser definida.
+#  Variável Global:
+### É definida quando declaramos uma variável fora de qualquer função.
 ---
-### Existem as variáveis globais e locais
+
+<CodeSurfer>
+
+ ```js title="Variável Global" 
+ var peso = 70
+ var altura = 1.75
+
+function calculaIMC(altura,peso) {
+  
+  return(peso/(altura * altura)).toFixed(2);
+  const imc = calculaIMC(altura,peso);    
+}
+  
+  console.log(`Seu imc é igual a ${imc}`);
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer>
+
+ ```js 1:2 title="Variável Global" subtitle="variáveis definidas fora da função"
+ var peso = 70
+ var altura = 1.75
+
+function calculaIMC(altura,peso) {
+  
+  return(peso/(altura * altura)).toFixed(2);
+  const imc = calculaIMC(altura,peso);    
+}
+  
+  console.log(`Seu imc é igual a ${imc}`);
+```
+
+</CodeSurfer>
+
+---
+### As variáveis estão declaradas fora da função
+#### o que é?
+---
+
+# É dizer em qual local do código a variável vai ser definida.
+---
+# E qual é a diferença?
+---
+# Declarar variável 
+## com 
+---
+### var
+
+### Declarações de variáveis usando var tem escopo global ou local (escopo de função).
+---
+
 ### Variável GLOBAL: É definida quando declaramos uma variável fora de qualquer função.
 ---
 <CodeSurfer>
