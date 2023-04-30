@@ -4,9 +4,11 @@ import {
   CodeSurferColumns,
   Step,
 } from "code-surfer";
-import { github, vsDark } from "@code-surfer/themes";
+import { github, nightOwl } from "@code-surfer/themes";
+import { Notes } from 'mdx-deck';
+import { CodeSurferNotes } from '@code-surfer/themes';
 
-export const theme = vsDark;
+export const theme = nightOwl;
 
 O que é?
 # Escopo de Função 👋
@@ -39,7 +41,7 @@ Qual o conceito de variável?
 
 ---
 ## Para declarar uma variável
-## Precisamos saber que:
+### Precisamos saber que:
 ---
 ### - A linguagem do JavaScript é case sensitive
 ### Maiúscula e minúscula faz diferença
@@ -51,15 +53,18 @@ Qual o conceito de variável?
 - let 
 - const
 ---
-### - Existem as variáveis globais e locais
+Agora sim
+## Escopo de Função 
 ---
-#  Variável Global:
-### É definida quando declaramos uma variável fora de qualquer função.
+#### O que é?
 ---
+<Notes>
+notas
+</Notes>
 
 <CodeSurfer>
 
- ```js title="Variável Global" 
+ ```js title="Escopo Global" 
  var peso = 70
  var altura = 1.75
 
