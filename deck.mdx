@@ -6,7 +6,6 @@ import {
 } from "code-surfer";
 import { github, nightOwl } from "@code-surfer/themes";
 import { Notes } from 'mdx-deck';
-import { CodeSurferNotes } from '@code-surfer/themes';
 
 export const theme = nightOwl;
 
@@ -53,73 +52,17 @@ Qual o conceito de variável?
 - let 
 - const
 ---
-Agora sim
-## Escopo de Função 
+## Escopo
+#### O escopo em JavaScript refere-se à acessibilidade ou visibilidade de variáveis ​e expressões.
 ---
-#### O que é?
+# Existem 3 tipos de Escopo
+- Escopo Global
+- Escopo de Função
+- Escopo de Bloco
 ---
-<Notes>
-notas
-</Notes>
-
 <CodeSurfer>
 
  ```js title="Escopo Global" 
- var peso = 70
- var altura = 1.75
-
-function calculaIMC(altura,peso) {
-  
-  return(peso/(altura * altura)).toFixed(2);
-  const imc = calculaIMC(altura,peso);    
-}
-  
-  console.log(`Seu imc é igual a ${imc}`);
-```
-
-</CodeSurfer>
-
----
-
-<CodeSurfer>
-
- ```js 1:2 title="Variável Global" subtitle="variáveis definidas fora da função"
- var peso = 70
- var altura = 1.75
-
-function calculaIMC(altura,peso) {
-  
-  return(peso/(altura * altura)).toFixed(2);
-  const imc = calculaIMC(altura,peso);    
-}
-  
-  console.log(`Seu imc é igual a ${imc}`);
-```
-
-</CodeSurfer>
-
----
-### As variáveis estão declaradas fora da função
-#### o que é?
----
-
-# É dizer em qual local do código a variável vai ser definida.
----
-# E qual é a diferença?
----
-# Declarar variável 
-## com 
----
-### var
-
-### Declarações de variáveis usando var tem escopo global ou local (escopo de função).
----
-
-### Variável GLOBAL: É definida quando declaramos uma variável fora de qualquer função.
----
-<CodeSurfer>
-
- ```js 
  let peso = 70
  let altura = 1.75
 
@@ -131,4 +74,71 @@ function calculaIMC(altura,peso) {
   
   console.log(`Seu imc é igual a ${imc}`);
 ```
+
 </CodeSurfer>
+
+<Notes>
+
+# O que é?:
+- variaveis que são declaradas fora de funções ou bloco de códigos{}
+- variaveis definidas no escopo global sao definidas como variaveis globais
+- podem ser acessadas de qualquer outro escopo
+
+</Notes>
+
+---
+
+<CodeSurfer>
+
+ ```js 9 title="Escopo Global" subtitle="const tem que está fora do escopo da função"
+ var peso = 70
+ var altura = 1.75
+
+function calculaIMC(altura,peso) {
+  
+  return(peso/(altura * altura)).toFixed(2);
+      
+}
+  const imc = calculaIMC(altura,peso);
+  console.log(`Seu imc é igual a ${imc}`);
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer>
+
+ ```js title="Escopo de Função"  
+ function calcAge(birthyear) {
+
+  // Declare variables inside the calcAge function scope
+
+  const currentYear = 2021;
+
+  const age = currentYear - birthyear;
+
+  return age;
+
+}
+
+calcAge(1975);
+
+// Attempt to access "currentYear" and "age" outside of the function scope is not possible
+
+console.log(currentYear); // ReferenceError: currentYear is not defined
+
+console.log(age); // ReferenceError: age is not defined
+```
+</CodeSurfer>
+
+---
+
+# Importancia do Escopo
+- Propriedade
+- 
+-
+
+<Notes>
+
+</Notes>
