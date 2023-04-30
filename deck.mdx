@@ -1,4 +1,4 @@
-import {Notes} from 'mdx-deck';
+
 import {
   CodeSurfer,
   CodeSurferColumns,
@@ -10,31 +10,10 @@ import { Notes } from 'mdx-deck';
 export const theme = nightOwl;
 
 O que é?
-# Escopo de Função 👋
-
-<Notes>
-
-- Aqui o exemplo de uma simples nota
-- Aqui outro exemplo de uma simples nota
-- E uma nota final 
-
-</Notes>
-
+# Escopo em Js 👋
 ---
-
-# Variável
-
-<Notes>
-
-# Lembrando que nas notas 
-## você pode usar:
-
-** Markdown ** 
-
-</Notes>
-
+#### O escopo em JavaScript refere-se à acessibilidade ou visibilidade de variáveis ​e expressões.
 ---
-
 Qual o conceito de variável?
 ### Na programação, uma variável é um objeto capaz de reter e representar um valor ou expressão.
 
@@ -44,16 +23,12 @@ Qual o conceito de variável?
 ---
 ### - A linguagem do JavaScript é case sensitive
 ### Maiúscula e minúscula faz diferença
----
 ## A != a 
 ---
 ### - Existem 3 tipos de declaração de variável em JavaScript
 - var 
 - let 
 - const
----
-## Escopo
-#### O escopo em JavaScript refere-se à acessibilidade ou visibilidade de variáveis ​e expressões.
 ---
 # Existem 3 tipos de Escopo
 - Escopo Global
@@ -90,7 +65,7 @@ function calculaIMC(altura,peso) {
 
 <CodeSurfer>
 
- ```js 9 title="Escopo Global" subtitle="const tem que está fora do escopo da função"
+ ```js 9 title="Escopo Global" subtitle="const tem que está fora do escopo da função para ser enxergado"
  var peso = 70
  var altura = 1.75
 
@@ -130,16 +105,31 @@ console.log(currentYear); // ReferenceError: currentYear is not defined
 
 console.log(age); // ReferenceError: age is not defined
 ```
+
 </CodeSurfer>
 
----
+<Notes>
 
-# Importancia do Escopo
-- Evitar conflitos de nomeação
+# O que é?
+- Cada função cria seu próprio escopo. 
+E as variáveis ​​declaradas dentro dessa função são acessíveis apenas dentro dessa função e qualquer uma de suas funções aninhadas.
+
+</Notes>
+
+--- 
+# Qual a importância de usar Escopo?
+- Evita conflitos de nomeação
 - Segurança
-- Encapsulamento
-- Modularidade
+- Garbage Collector
 
 <Notes>
+
+1 - Quando você tem várias variáveis ​​e funções em seu código, é possível que alguns nomes sejam iguais. 
+Usando o escopo, você pode limitar a visibilidade desses nomes para que não gere conflito.
+
+2- Com escopo voce pode controlar quais variaveis e funçoes são acessiveis isso evita que alguem altere acidentalmente ou não
+
+3- Com uso de escopo a variavel que é definida dentro de uma função e  quando essa função for concluída, as variaveis 
+podem ser coletadas pelo garbage collector
 
 </Notes>
