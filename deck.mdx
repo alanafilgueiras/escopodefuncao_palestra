@@ -30,6 +30,24 @@ Qual o conceito de variável?
 - let 
 - const
 ---
+# Qual a importância de usar Escopo?
+- Evita conflitos de nomeação
+- Segurança
+- Garbage Collector
+
+<Notes>
+
+1 - Quando você tem várias variáveis ​​e funções em seu código, é possível que alguns nomes sejam iguais. 
+Usando o escopo, você pode limitar a visibilidade desses nomes para que não gere conflito.
+
+2- Com escopo voce pode controlar quais variaveis e funçoes são acessiveis isso evita que alguem altere acidentalmente ou não
+
+3- Com uso de escopo a variavel que é definida dentro de uma função e  quando essa função for concluída, as variaveis 
+podem ser coletadas pelo garbage collector
+
+</Notes>
+
+---
 # Existem 3 tipos de Escopo
 - Escopo Global
 - Escopo de Função
@@ -85,12 +103,10 @@ function calculaIMC(altura,peso) {
 <CodeSurfer>
 
  ```js title="Escopo de Função"  
- function calcAge(birthyear) {
-
+  function calcAge(birthyear) {
   // Declare variables inside the calcAge function scope
 
   const currentYear = 2021;
-
   const age = currentYear - birthyear;
 
   return age;
@@ -117,19 +133,53 @@ E as variáveis ​​declaradas dentro dessa função são acessíveis apenas d
 </Notes>
 
 --- 
-# Qual a importância de usar Escopo?
-- Evita conflitos de nomeação
-- Segurança
-- Garbage Collector
+<CodeSurfer>
+
+```js title="Escopo de Bloco"
+
+function exemploEscopoBloco(){
+  let x = 10;
+
+  if(x > 5){
+    let y = 20;
+    console.log(x,y) 
+  }
+
+console.log(x) 
+console.log(y)
+}
+```
+
+</CodeSurfer>
 
 <Notes>
 
-1 - Quando você tem várias variáveis ​​e funções em seu código, é possível que alguns nomes sejam iguais. 
-Usando o escopo, você pode limitar a visibilidade desses nomes para que não gere conflito.
-
-2- Com escopo voce pode controlar quais variaveis e funçoes são acessiveis isso evita que alguem altere acidentalmente ou não
-
-3- Com uso de escopo a variavel que é definida dentro de uma função e  quando essa função for concluída, as variaveis 
-podem ser coletadas pelo garbage collector
+# O que é?
+- é um escopo limitado a um bloco de codigo delimitado
+- pode ser criado dentro de funções, laços de repetiçao e em estrutura de decisao 
+- com es6 as palavras-chave let e const foram introduzidas para definir escopo de bloco
+- limita-se só ate o bloco de codigo onde foram declaradas
+- e util usar para aquelas variaveis que sao usadas em apenas um determinado bloco de codigo e 
+n em todo escopo da funçao.
 
 </Notes>
+
+---
+
+<CodeSurfer>
+
+```js 5:7,11 title="Escopo de Bloco"
+
+function exemploEscopoBloco(){
+  let x = 10;
+
+  if(x > 5){
+    let y = 20;
+    console.log(x,y) // imprime "10 20"
+  }
+
+console.log(x) // imprime "10"
+console.log(y) // Erro: "y is not defined"
+}
+``` 
+</CodeSurfer>
