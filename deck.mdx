@@ -105,20 +105,15 @@ function calculaIMC(altura,peso) {
  ```js title="Escopo de Função"  
   function calcAge(birthyear) {
   // Declare variables inside the calcAge function scope
-
   const currentYear = 2021;
   const age = currentYear - birthyear;
-
   return age;
-
 }
 
 calcAge(1975);
 
 // Attempt to access "currentYear" and "age" outside of the function scope is not possible
-
 console.log(currentYear); // ReferenceError: currentYear is not defined
-
 console.log(age); // ReferenceError: age is not defined
 ```
 
@@ -183,3 +178,76 @@ console.log(y) // Erro: "y is not defined"
 }
 ``` 
 </CodeSurfer>
+
+---
+
+# Escopo Aninhado
+Sim, é possivel criar um escopo dentro de outro escopo
+
+---
+
+<CodeSurfer>
+
+```js title="Escopo Aninhado"
+function calcularIdade (anoNascimento){
+  const nome = "Joana";
+  const anoAtual = 2021;
+  const idade = anoAtual - anoNascimento;
+    
+  if(idade <=60){
+     const message = `${nome} ainda não se aposentou`;
+     console.log(message)
+  }
+
+  function anosRestante(){
+    const aposentadoria = 60 - idade;
+    console.log(`${nome} se aposentará em ${aposentadoria} anos`)
+  }
+  anosRestante();
+}
+calcularIdade(1975);
+```
+</CodeSurfer>
+
+<Notes>
+
+# O que é?
+funções podem ser definidas dentro de outras funções, e cada função tem 
+acesso às variáveis definidas no escopo da função pai
+
+</Notes>
+
+---
+
+# Escopo Léxico
+### O escopo é definido no local onde a variável ou função é definida, e não onde elas são executadas.
+
+---
+
+<CodeSurfer>
+
+```js title="Escopo Lexico"
+const userName = "Peter";
+
+function sayUserName() {
+  console.log(userName);
+}
+
+function sayUserNameAgain() {
+  const userName = "Sarah";
+  // Invoke the first function
+  sayUserName();
+}
+
+sayUserNameAgain(); // Peter
+
+```
+</CodeSurfer>
+
+<Notes>
+
+o escopo das variáveis é definido pela estrutura do código 
+e não pela ordem em que as funções são executadas.
+
+</Notes>
+ 
