@@ -1,3 +1,4 @@
+Breve apresentação sobre escopo de função  usando MDX Deck + CodeSurfer
 # MDX Deck + Code Surfer template
 
 This project was generated with the `npm init code-surfer-deck` command.
